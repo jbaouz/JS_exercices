@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code barre Generator</title>
+    <style>
+        #head {
+            display:flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        label {
+            margin-top: 10px;
+        }
+        #gencod {
+            margin-top: 20px;
+        }
+        #barre_code {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <fieldset id="head">
+        <legend>Entrez votre n°produit</legend>
+        <input type="number" id="entry">
+        <label for="button">Générez votre code barre</label>
+        <button id="button">Go</button>
+    </fieldset>
+    <fieldset id="gencod">
+        <legend>Votre code barre</legend>
+        <div id="barre_code">
+
+        </div>
+    </fieldset>
+    <script>
+    let inputVal = document.getElementById('entry');
+    document.getElementById('button').addEventListener("click",genBc);
+    
+    function genBc() {
+        let enteredNumber = inputVal.value;
+        //console.log(enteredNumber)
+        for(i=0; i<enteredNumber.length; i++){
+            console.log(enteredNumber[i]);
+            let newdiV = document.getElementById('barre_code');
+            let diV= document.createElement('div');
+            diV.setAttribute("style", `background-color:black; height: 60px; width: ${enteredNumber[i]}px;
+            margin-right: 5px`);
+            newdiV.appendChild(diV);
+        }
+    }
+    </script>
+</body>
+</html>

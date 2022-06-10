@@ -1,0 +1,19 @@
+un petit exo pour se finir en beauté : 
+
+
+Votre cousin tient un magasin de babioles pour touristes 
+et voudrait bien pouvoir référencer ses produits. 
+Il vous demande de bien vouloir mettre au point un système de 
+code-barres :
+Les références de ses produits sont des suites de 20 chiffres
+ de 0 à 9
+
+ 
+
+Mettez au point la génération des code-barres, vous pouvez 
+utiliser HTML/JS ou l'élément <canvas>
+La largeur de chaque barre sera evidemment proportionnelle au 
+chiffre, et seront toutes séparées par un espace fixe, avec la 
+couleur de votre choix ...
+En option, intégrez un champ de saisie qui permettra de générer 
+à la demande le code-barre ...
