@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ennonce</title>
+</head>
+<body>
+    <div id="calcul_impot">
+        <fieldset>
+            <legend>Calcul Impôt</legend>
+            <label for="name">Nom</label>
+            <input id="name" type="text" >
+            <label for="revenu">Revenu</label>
+            <input id="revenu" type="number">
+            <button id="go">Go</button>
+        </fieldset>
+        <div id="affiche_impot"></div>
+    </div>
+    <script>
+        class Impots {
+            constructor(revenu,name){
+                this.rev = parseInt(revenu)
+                this.nom = name
+            }
+            calcul_impots() {
+                if(this.rev < 15000){
+                return this.rev*0.15
+                } else {
+                return this.rev*0.2
+                }
+            }
+            affiche_impot() {
+                return `Mr ${this.nom}, votre impot est de ${this.calcul_impots()}`
+            }
+        }
+        document.getElementById('go').addEventListener('click',function(){
+            let name = document.getElementById('name').value
+            let revenu = document.getElementById('revenu').value
+            let mytax = new Impots(revenu,name)
+            document.getElementById('affiche_impot').innerText = mytax.affiche_impot()
+        })
+    </script>
+</body>
+</html>
